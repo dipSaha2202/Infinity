@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to Void</title>
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
-<body>
+<body onload="startTime()">
 <header>
     <nav>
         <ul>
@@ -15,6 +16,7 @@
             <li><a href="">Files</a></li>
         </ul>
     </nav>
+    <p id="time">Time</p>
 </header>
 
 <div>
@@ -29,5 +31,6 @@
 <footer>
 
 </footer>
+<script type="text/javascript" src="script/common.js"></script>
 <script type="text/javascript" src="script/index.js"></script>
 </html>

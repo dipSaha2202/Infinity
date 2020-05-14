@@ -3,6 +3,11 @@ body {
     margin: 0;
 }
 
+#time{
+    float: right;
+    padding-right: 10px;
+}
+
 header{
     background: aqua;
     background: url("../images/header_background.png");

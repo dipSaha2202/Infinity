@@ -1,8 +1,9 @@
 let theNumber;
 let chances;
 let inputBox = document.getElementById("inputNumber");
+let outputParagraphTag = document.getElementById("outputMessage");
 
-inputBox.addEventListener("keyup", function(event) {
+inputBox.addEventListener("keydown", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         checkGuess();
@@ -11,7 +12,6 @@ inputBox.addEventListener("keyup", function(event) {
 
 function checkGuess() {
     let input = inputBox.value;
-    let outputParagraphTag = document.getElementById("outputMessage");
 
     if (input.length === 0) {
         alert("insert something");
@@ -22,13 +22,18 @@ function checkGuess() {
         return;
     }
     chances--;
+    let d;
+    chances !== 1? d="s": d = "";
 
     if (input < theNumber){
-        outputParagraphTag.innerText = "low and " + chances + " left";
+        outputParagraphTag.style.color= "red";
+        outputParagraphTag.innerText = input + " is lower, and " + chances + " chance" + d + " left.";
     } else if (input > theNumber){
-        outputParagraphTag.innerText = "high and " + chances + " left";
+        outputParagraphTag.style.color= "red";
+        outputParagraphTag.innerText = input + " is higher, and " + chances + " chance" + d + " left.";
     } else {
-        outputParagraphTag.innerText = "win! Play Again";
+        outputParagraphTag.style.color= "green";
+        outputParagraphTag.innerText = "Win! The correct number was " + theNumber + ". Play Again?";
         newGame();
     }
     inputBox.focus();
@@ -44,6 +49,6 @@ function checkGuess() {
 function newGame() {
     chances = 7;
     theNumber = parseInt(Math.random()*100 + 1);
-    console.log(theNumber);
+   // console.log(theNumber);
 }
 newGame();
