@@ -41,7 +41,7 @@ function checkGuess() {
 
     if (chances < 1){
         alert("You have lost all chances. Number was " + theNumber + ". Play again");
-        outputParagraphTag.innerText = "Play again";
+        outputParagraphTag.innerText = "Play again??";
         newGame();
     }
 }
@@ -49,6 +49,6 @@ function checkGuess() {
 function newGame() {
     chances = 7;
     theNumber = parseInt(Math.random()*100 + 1);
-   // console.log(theNumber);
+    console.log(theNumber);
 }
 newGame();
