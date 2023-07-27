@@ -49,6 +49,6 @@ function checkGuess() {
 function newGame() {
     chances = 7;
     theNumber = parseInt(Math.random()*100 + 1);
-    console.log(theNumber);
+   // console.log(theNumber);
 }
 newGame();
